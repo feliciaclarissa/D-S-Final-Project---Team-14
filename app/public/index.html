@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Oconee County Fire Rescue</title>
+
+	<style>
+
+		h1{
+			font-size: 50px;
+			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
+		}
+
+		h4{
+			font-size: 22px;
+			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
+		}
+
+		nav{
+			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, 'sans-serif';
+		}
+
+		.btn{
+			transform: translate (-50%, -50%);
+			-ms-transform: translate (-50%,-50%);
+			background-color: darkgray;
+			color: black;
+			font-size: 16px;
+			padding: 10px 10px;
+			margin: 5px;
+			border: none;
+			cursor:pointer;
+			border-radius: 5px;
+			text-align: center;
+			font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
+			margin-right: 1px;
+
+		}
+		.btn:hover {
+			background-color: black;
+			color:white;
+		}
+
+
+	.dots{
+		color: transparent;
+	}
+	.cb-slideshow,
+	.cb-slideshow:after {
+			position:fixed;
+			width: 100%;
+			height: 100%;
+			top:0px;
+			left:0px;
+			z-index: -1;
+		}
+		.cb-slideshow:after {
+			content:'';
+
+
+		}
+		.cb-slideshow li span{
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:-1px;
+			left:0px;
+			color:transparent;
+			background-size:cover;
+			background-position: 50% 50%;
+			background-repeat: none;
+			opacity:0;
+			z-index:-1;
+			animation: imageAnimation 36s linear infinite 0s;
+		}
+
+		.cb-slideshow li div{
+			z-index: 1000;
+			position:absolute;
+			bottom:30px;
+			left:0px;
+			width:100%;
+			text-align: center;
+			opacity:  0;
+			color: #000;
+			animation:titleAniimation 36s linear infinite 0s;
+		}
+
+		.cb-slideshow li:nth-child(1) span {
+			background-image:url("groupPic.jpg");
+		}
+		.cb-slideshow li:nth-child(2) span {
+  			background-image: url('women1.jpg');
+			animation-delay: 6s;
+		}
+		.cb-slideshow li:nth-child(3) span {
+  			background-image: url('man.jpg');
+   			animation-delay: 12s;
+		}
+		.cb-slideshow li:nth-child(4) span {
+   			background-image: url('scuba.jpg');
+  			animation-delay: 18s;
+		}
+		.cb-slideshow li:nth-child(5) span {
+   			background-image: url('women2.jpg');
+			animation-delay: 24s;
+		}
+
+		@keyframes imageAnimation{
+			0% {opacity: 0; animation-timing-function: ease-in;}
+			8% {opacity: .6; animation-timing-function: ease-out;}
+			17% {opacity: .6}
+			25% {opacity: 0}
+			100% {opacity: 0}
+		}
+		@titleAnimation{
+			0% {opacity: 0}
+			8% {opacity: 1}
+			17% {opacity: 1}
+			25% {opacity: 0}
+			100% {opacity: 0}
+		}
+		.no-cssanimations .cbslideshow li span{
+			opacity:1;
+		}
+	</style>
+
+
+
+
+	<br/><br/>
+	<center>
+		<h1>Oconee County Fire Rescue</h1>
+
+		<hr width="37%"/>
+
+		<h4>Putting out fires on the daily</h4>
+<br/>
+
+
+	<nav>
+		<a href="index.html"><button type="button" class="btn">Member</button></a>
+		<a href="certification.html"><button type="button" class="btn">Certifications</button></a>
+		<a href="report.html"> <button type="button" class="btn">Reports</button></a>
+	</nav>
+
+	</center>
+</head>
+
+
+<body>
+
+		<br/><br/><br/><br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/><br/><br/><br/>
+
+	<div class="dots">	<ul class="cb-slideshow">
+	<li><span>Image 01</span></li>
+	<li><span>Image 02</span></li>
+	<li><span>Image 03</span></li>
+	<li><span>Image 04</span></li>
+	<li><span>Image 05</span></li>
+	</ul></div>
+</body>
+
+
+</html>
