@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Members</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<center>
+	<nav>
+		<a href="index.html"><button type="button" class="btn">Home</button></a>
+		<a href="member.html"><button type="button" class="btn">Members</button></a>
+		<a href="certification.html"><button type="button" class="btn">Certifications</button></a>
+		<a href="enrollment.html"><button type="button" class="btn">Enrollment</button></a>
+		<a href="report.html"> <button type="button" class="btn">Reports</button></a>
+	</nav>
+
+<h1> Members </h1>
+</center>
+</head>
+
+
+<body>
+
+	<form>
+	  <div class="form-row">
+	    <div class="form-group col-md-6">
+	      <label for="inputFirst">First Name</label>
+	      <input type="text" class="form-control" id="inputFirst">
+	    </div>
+	    <div class="form-group col-md-6">
+	      <label for="inputLast">Last Name</label>
+	      <input type="text" class="form-control" id="inputLast">
+	    </div>
+	  </div>
+		<div class="form-row">
+	  	<div class="form-group">
+		    <label for="inputDob">DOB</label>
+		    <input type="date" class="form-control" id="inputDob" placeholder="2019/10/10">
+	  	</div>
+		  <div class="form-group">
+		    <label for="inputGender">Gender</label>
+		    <input type="text" class="form-control" id="inputGender" placeholder="M|F">
+		  </div>
+		</div>
+		<div class="form-row">
+	  	<div class="form-group">
+		    <label for="inputRadio">Radio #</label>
+		    <input type="text" class="form-control" id="inputRadio" placeholder="A-2">
+	  	</div>
+		  <div class="form-group">
+		    <label for="inputStation">Station #</label>
+		    <input type="text" class="form-control" id="inputStation" placeholder="1233#11">
+		  </div>
+		</div>
+
+		<div class="form-row">
+	  	<div class="form-group">
+		    <label for="inputEmail">Email</label>
+		    <input type="email" class="form-control" id="inputEmail" placeholder="example@xyz.com">
+	  	</div>
+		  <div class="form-group">
+		    <label for="inputPhone">Phone</label>
+		    <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890">
+		  </div>
+		</div>
+
+	  	<div class="form-group">
+		    <label for="inputAddress">Address</label>
+		    <input type="email" class="form-control" id="inputAddress">
+	  	</div>
+		  <div class="form-group">
+		    <label for="inputPosition">Position</label>
+		    <input type="text" class="form-control" id="inputPosition" placeholder="Fire Chief">
+		  </div>
+
+			<div class="form-row">
+				<div class="form-group">
+					<label for="inputStart">Start Date</label>
+					<input type="date" class="form-control" id="inputStart" placeholder="2019/10/10">
+				</div>
+				<div class="form-group">
+					<label for="inputActive">Active</label>
+					<input type="text" class="form-control" id="inputActive" placeholder="Y|N">
+				</div>
+			</div>
+
+	  <button type="submit" class="btn btn-primary">Create Member</button> <br> <br>
+	</form>
+
+	<table class="table table-hover table-striped table-sm">
+	  <thead>
+	    <tr>
+	      <th scope="col"> Member ID </th>
+	      <th scope="col"> First </th>
+	      <th scope="col"> Last </th>
+	      <th scope="col"> DOB </th>
+				<th scope="col"> Gender </th>
+	      <th scope="col"> Radio # </th>
+	      <th scope="col"> Station # </th>
+	      <th scope="col"> Email </th>
+				<th scope="col"> Position </th>
+			  <th scope="col"> Phone </th>
+			  <th scope="col"> Address </th>
+			  <th scope="col"> Start Date </th>
+			  <th scope="col"> Active </th>
+				<th scope="col"> Delete </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td> 1 </td>
+	      <td> Tucker </td>
+	      <td> Stewart </td>
+				<td> 07/20/1997</td>
+	      <td> M </td>
+				<td> 123 </td>
+	      <td> 789 </td>
+				<td> tucstewa@iu.edu </td>
+	      <td> Fire Chief </td>
+				<td> 8126051763 </td>
+	      <td> 123 Main St </td>
+				<td> 01/01/2015 </td>
+	      <td> Yes </td>
+				<td> <a href="member.html">Delete </a> </td>
+	    </tr>
+
+			<tr>
+	      <td> 1 </td>
+	      <td> Tucker </td>
+	      <td> Stewart </td>
+				<td> 07/20/1997</td>
+	      <td> M </td>
+				<td> 123 </td>
+	      <td> 789 </td>
+				<td> tucstewa@iu.edu </td>
+	      <td> Fire Chief </td>
+				<td> 8126051763 </td>
+	      <td> 123 Main St </td>
+				<td> 01/01/2015 </td>
+	      <td> Yes </td>
+				<td> <a href="member.html">Delete </a> </td>
+	    </tr>
+
+			<tr>
+	      <td> 1 </td>
+	      <td> Tucker </td>
+	      <td> Stewart </td>
+				<td> 07/20/1997</td>
+	      <td> M </td>
+				<td> 123 </td>
+	      <td> 789 </td>
+				<td> tucstewa@iu.edu </td>
+	      <td> Fire Chief </td>
+				<td> 8126051763 </td>
+	      <td> 123 Main St </td>
+				<td> 01/01/2015 </td>
+	      <td> Yes </td>
+				<td> <a href="member.html">Delete </a> </td>
+	    </tr>
+
+			<tr>
+	      <td> 1 </td>
+	      <td> Tucker </td>
+	      <td> Stewart </td>
+				<td> 07/20/1997</td>
+	      <td> M </td>
+				<td> 123 </td>
+	      <td> 789 </td>
+				<td> tucstewa@iu.edu </td>
+	      <td> Fire Chief </td>
+				<td> 8126051763 </td>
+	      <td> 123 Main St </td>
+				<td> 01/01/2015 </td>
+	      <td> Yes </td>
+				<td> <a href="member.html">Delete </a> </td>
+	    </tr>
+
+	  </tbody>
+	</table>
+</body>
+
+<hr>
+
+<center>
+<footer>
+Oconee County Fire Department | Putting Out Fires Daily
+</footer></center>
+
+</html>

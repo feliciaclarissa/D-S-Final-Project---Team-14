@@ -4,62 +4,89 @@
 <meta charset="UTF-8">
 <title>Certifications</title>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<style>
-	    html, head, h1, img, nav{
-			background-color: lightgrey;
-			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
-			color:black;
-
-		}
-
-	    body, p,h3,ul{
-			background-color: #7a1705;
-			color:white;
-
-		}
-		.btn{
-			transform: translate (-50%, -50%);
-			-ms-transform: translate (-50%,-50%);
-			background-color: darkgray;
-			color: black;
-			font-size: 16px;
-			padding: 10px 10px;
-			margin: 5px;
-			border: none;
-			cursor:pointer;
-			border-radius: 5px;
-			text-align: center;
-			font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
-			margin-right: 1px;
-
-		}
-		.btn:hover {
-			background-color: black;
-			color:white;
-		}
-
-</style>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <center>
-<h1>Oconee County Fire Rescue</h1>
 	<nav>
-		<a href="index.html"><button type="button" class="btn">Member</button></a>
+		<a href="index.html"><button type="button" class="btn">Home</button></a>
+		<a href="member.html"><button type="button" class="btn">Members</button></a>
 		<a href="certification.html"><button type="button" class="btn">Certifications</button></a>
+		<a href="enrollment.html"><button type="button" class="btn">Enrollment</button></a>
 		<a href="report.html"> <button type="button" class="btn">Reports</button></a>
 	</nav>
 
+<h1> Certifications </h1>
 </center>
 </head>
 
-	<br>
 
 <body>
 
+	<form>
+	  <div class="form-row">
+	    <div class="form-group col-md-12">
+	      <label for="inputCertName">Certification Name</label>
+	      <input type="text" class="form-control" id="inputCertName">
+	    </div>
+	    <div class="form-group col-md-12">
+	      <label for="inputCertAgency">Agency Name</label>
+	      <input type="text" class="form-control" id="inputCertAgency">
+	    </div>
+			<div class="form-group col-md-12">
+	      <label for="inputExpPeriod">Expiration Period</label>
+	      <input type="integer" class="form-control" id="inputExpPeriod">
+	    </div>
+	  </div>
 
+	  <button type="submit" class="btn btn-primary">Create Certification</button> <br> <br>
+	</form>
 
+	<table class="table table-hover table-striped table-sm">
+	  <thead>
+	    <tr>
+	      <th scope="col"> Certification ID </th>
+	      <th scope="col"> Certification Name </th>
+	      <th scope="col"> Agency Name </th>
+	      <th scope="col"> Expiration Period (Years) </th>
+				<th scope="col">Delete</th>
+			</tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td> 1 </td>
+	      <td> Fire Fighter I </td>
+	      <td> Red Cross </td>
+				<td>3</td>
+	      <td> <a href="certification.html">Delete</a> </td>
+	    </tr>
+			<tr>
+				<td> 2 </td>
+				<td>Fire Chief </td>
+				<td>CPR</td>
+				<td>2</td>
+				<td> <a href="certification.html">Delete</a> </td>
+			</tr>
+			<tr>
+				<td> 3 </td>
+				<td> Fire Fighting Master </td>
+				<td> Red Cross </td>
+				<td>5</td>
+				<td> <a href="certification.html">Delete</a> </td>
+			</tr>
 
-
+	  </tbody>
+	</table>
 </body>
+
+<hr>
+
+<center>
+<footer>
+Oconee County Fire Department | Putting Out Fires Daily
+</footer></center>
+
 </html>
