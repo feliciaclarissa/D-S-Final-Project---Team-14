@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Reports </title>
+<title>Enrollment</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -19,7 +19,7 @@
 		<a href="report.html"> <button type="button" class="btn">Reports</button></a>
 	</nav>
 
-<h1> Reports </h1>
+<h1> Enrollment </h1>
 </center>
 </head>
 
@@ -29,18 +29,29 @@
 	<form>
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
-	      <label for="inputMemberID">Member</label>
-	      <input type="integer" class="form-control" id="inputMemberSearch">
+	      <label for="inputMemberID">Member ID</label>
+	      <input type="integer" class="form-control" id="inputMemberID">
 	    </div>
 	  </div>
 		<div class="form-row">
 	  	<div class="form-group">
-		    <label for="inputCertNumber">Certification</label>
-		    <input type="integer" class="form-control" id="inputCertSearch">
+		    <label for="inputCertNumber">Certification ID</label>
+		    <input type="integer" class="form-control" id="inputCertNumber">
 	  	</div>
 		</div>
-
-	  <button type="submit" class="btn btn-primary"> Search </button> <br> <br>
+		<div class="form-row">
+	  	<div class="form-group">
+		    <label for="inputIsActive">Enrollment Active?</label>
+		    <input type="text" class="form-control" id="inputIsActive">
+	  	</div>
+		</div>
+		<div class="form-row">
+	  	<div class="form-group">
+		    <label for="inputEnrolStart">Enrollment Start Date</label>
+		    <input type="date" class="form-control" id="inputEnrolStart">
+	  	</div>
+		</div>
+	  <button type="submit" class="btn btn-primary">Create New Enrollment</button> <br> <br>
 	</form>
 
 	<table class="table table-hover table-striped table-sm">
@@ -52,9 +63,10 @@
 				<th scope="col"> Certification Name </th>
 				<th scope="col"> Enrollment Start Date </th>
 				<th scope="col"> Enrollment End Date </th>
+	      <th scope="col"> Modify </th>
+				<th scope="col"> Delete </th>
 	    </tr>
 	  </thead>
-
 	  <tbody>
 	    <tr>
 	      <td> 1 </td>
@@ -63,6 +75,8 @@
 				<td> Fire Fighter I </td>
 				<td> 07/20/2019</td>
 	      <td> 07/19/2021 </td>
+				<td> <a href="enrollment.html">Modify </a> </td>
+				<td> <a href="enrollment.html">Delete </a> </td>
 	    </tr>
 
 			<tr>
@@ -72,8 +86,9 @@
  			 <td> Fire Fighter I </td>
  			 <td> 07/20/2019</td>
  			 <td> 07/19/2021 </td>
+ 			 <td> <a href="enrollment.html">Modify </a> </td>
+ 			 <td> <a href="enrollment.html">Delete </a> </td>
  		 </tr>
-
 		 <tr>
 			 <td> 1 </td>
 			 <td> Tucker </td>
@@ -81,6 +96,8 @@
 			 <td> Fire Fighter I </td>
 			 <td> 07/20/2019</td>
 			 <td> 07/19/2021 </td>
+			 <td> <a href="enrollment.html">Modify </a> </td>
+			 <td> <a href="enrollment.html">Delete </a> </td>
 		 </tr>
 
 
@@ -88,7 +105,6 @@
 	</table>
 </body>
 
-<br><br>
 <hr>
 
 <center>
