@@ -1,7 +1,7 @@
 # Copy this file and rename it `env`
 # Do NOT ever include your *real* env in version control
 
-MYSQL_DATABASE=DSFinalProject
+MYSQL_DATABASE=dsfinalproject
 MYSQL_HOST=dsfinalproject.cnqeyg7tcx5b.us-east-1.rds.amazonaws.com
 MYSQL_USER=team14
 MYSQL_PASSWORD=password14

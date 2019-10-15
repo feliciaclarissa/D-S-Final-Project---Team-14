@@ -25,20 +25,20 @@
 
 
 <body>
-
-	<form>
-	  <div class="form-row">
+<div id="certificationRecord">
+				<form @submit.prevent="handleSubmit">
+				<div class="form-row">
 	    <div class="form-group col-md-12">
 	      <label for="inputCertName">Certification Name</label>
-	      <input type="text" class="form-control" id="inputCertName">
+	      <input type="text" class="form-control" id="inputCertName" v-model="recordCertification.certification_name">
 	    </div>
 	    <div class="form-group col-md-12">
 	      <label for="inputCertAgency">Agency Name</label>
-	      <input type="text" class="form-control" id="inputCertAgency">
+	      <input type="text" class="form-control" id="inputCertAgency" v-model="recordCertification.certification_agency">
 	    </div>
 			<div class="form-group col-md-12">
 	      <label for="inputExpPeriod">Expiration Period</label>
-	      <input type="integer" class="form-control" id="inputExpPeriod">
+	      <input type="integer" class="form-control" id="inputExpPeriod" v-model="recordCertification.exp_period">
 	    </div>
 	  </div>
 
@@ -56,11 +56,11 @@
 			</tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <td> 1 </td>
-	      <td> Fire Fighter I </td>
-	      <td> Red Cross </td>
-				<td>3</td>
+	    <tr v-for="c in certifications">
+				<td>{{ c.certificationID }}</td>
+				<td>{{ c.certification_name }}</td>
+        <td>{{ c.certification_agency }}</td>
+        <td>{{ c.exp_period }}</td>
 	      <td> <a href="certification.html">Delete</a> </td>
 	    </tr>
 			<tr>
@@ -80,6 +80,9 @@
 
 	  </tbody>
 	</table>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/certification.js"></script>
 </body>
 
 <hr>
@@ -88,5 +91,6 @@
 <footer>
 Oconee County Fire Department | Putting Out Fires Daily
 </footer></center>
+
 
 </html>
