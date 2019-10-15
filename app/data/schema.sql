@@ -46,4 +46,3 @@ CREATE TABLE receive (
 );
 
 INSERT INTO receive ( memberID, certificationID, certificateIsActive, certificateStartDate, certificateEndDate) VALUES (1,1, TRUE, '2019-10-05', '2021-10-04');
-
