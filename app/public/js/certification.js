@@ -34,10 +34,10 @@ var certificationRecord = new Vue({
         certification_agency: '',
         exp_period: ''
       }
-    },
+    }
     // handleRowClick(patient) {
     //   patientTriageApp.patient = patient;
-  }, // end methods
+  } // end methods
   created() {
     this.handleReset();
     this.fetchCertifications();

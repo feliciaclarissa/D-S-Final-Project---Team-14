@@ -43,7 +43,7 @@ var memberRecordsApp = new Vue({
         startDate: '',
         isActive: ''
       }
-    },
+    }
     // handleRowClick(patient) {
     //   patientTriageApp.patient = patient;
     // }
