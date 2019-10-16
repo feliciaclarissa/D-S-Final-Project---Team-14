@@ -25,19 +25,22 @@
 
 
 <body>
-
+ <div id="receiveRecordsApp">
+	 <p>{{ receive }}</p>
 	<form>
-	  <div class="form-row">
+	    <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputMemberID">Member ID</label>
-	      <input type="integer" class="form-control" id="inputMemberID">
+				<select class="form-control" id="inputMemberID" v-for="r for receive">
+								<option>{{ r.memberID }}</option>
+        </select>
 	    </div>
 	  </div>
 		<div class="form-row">
-	  	<div class="form-group">
-		    <label for="inputCertNumber">Certification ID</label>
-		    <input type="integer" class="form-control" id="inputCertNumber">
-	  	</div>
+			<div class="form-group">
+				<label for="inputCertNumber">Certification ID</label>
+				<input type="integer" class="form-control" id="inputCertNumber">
+			</div>
 		</div>
 		<div class="form-row">
 	  	<div class="form-group">
@@ -99,10 +102,13 @@
 			 <td> <a href="enrollment.html">Modify </a> </td>
 			 <td> <a href="enrollment.html">Delete </a> </td>
 		 </tr>
-
+</div>
 
 	  </tbody>
 	</table>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/member.js"></script>
+	<script src="js/receive.js"></script>
 </body>
 
 <hr>
