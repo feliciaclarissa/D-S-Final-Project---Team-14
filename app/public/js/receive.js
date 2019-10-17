@@ -2,13 +2,19 @@ var receiveRecordsApp = new Vue({
   el: '#receiveRecordsApp',
   data: {
     receive: [],
-    recordReceive: {},
+    members: [],
+    recordReceive: {}
   },
   methods: {
     fetchreceive() {
       fetch('api/enrollment/index.php')
       .then(response => response.json())
       .then(json => { receiveRecordsApp.receive = json })
+    },
+    fetchMembers() {
+      fetch('api/member/fetch.php')
+      .then(response => response.json())
+      .then(json => { receiveRecordsApp.members = json })
     },
     handleSubmit(event) {
       TODO:
@@ -26,7 +32,7 @@ var receiveRecordsApp = new Vue({
         console.error(err);
         });
       this.handleReset();
-      this.fetchreceive();
+      // this.fetchreceive();
     },
     handleReset() {
       this.recordReceive = {
@@ -45,5 +51,6 @@ var receiveRecordsApp = new Vue({
   created() {
     this.handleReset();
     this.fetchreceive();
+    this.fetchMembers();
   }
 });

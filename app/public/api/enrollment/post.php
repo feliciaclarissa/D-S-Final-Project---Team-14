@@ -14,13 +14,14 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $guid,
+  // $id,
   $_POST['memberID'],
   $_POST['certificateIsActive'],
   $_POST['certificateStartDate'],
   $_POST['certificateEndDate']
 ]);
+$id = $db->lastInsertId();
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../receive/?guid=' . $guid);
+header('Location: ../enrollment/?id='.$id);

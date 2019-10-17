@@ -26,13 +26,12 @@
 
 <body>
  <div id="receiveRecordsApp">
-	 <p>{{ receive }}</p>
 	<form>
 	    <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputMemberID">Member ID</label>
-				<select class="form-control" id="inputMemberID" v-for="r for receive">
-								<option>{{ r.memberID }}</option>
+				<select class="form-control" required>
+								<option v-for="r in members" :value="r.memberID">{{r.firstName}}</option>
         </select>
 	    </div>
 	  </div>
@@ -81,33 +80,10 @@
 				<td> <a href="enrollment.html">Modify </a> </td>
 				<td> <a href="enrollment.html">Delete </a> </td>
 	    </tr>
-
-			<tr>
- 			 <td> 1 </td>
- 			 <td> Tucker </td>
- 			 <td> Stewart </td>
- 			 <td> Fire Fighter I </td>
- 			 <td> 07/20/2019</td>
- 			 <td> 07/19/2021 </td>
- 			 <td> <a href="enrollment.html">Modify </a> </td>
- 			 <td> <a href="enrollment.html">Delete </a> </td>
- 		 </tr>
-		 <tr>
-			 <td> 1 </td>
-			 <td> Tucker </td>
-			 <td> Stewart </td>
-			 <td> Fire Fighter I </td>
-			 <td> 07/20/2019</td>
-			 <td> 07/19/2021 </td>
-			 <td> <a href="enrollment.html">Modify </a> </td>
-			 <td> <a href="enrollment.html">Delete </a> </td>
-		 </tr>
-</div>
-
 	  </tbody>
 	</table>
+</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="js/member.js"></script>
 	<script src="js/receive.js"></script>
 </body>
 
