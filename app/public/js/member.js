@@ -25,7 +25,7 @@ var memberRecordsApp = new Vue({
         console.error(err);
         });
       this.handleReset();
-      this.fetchMembers();
+      // this.fetchMembers();
     },
     handleReset() {
       this.recordMember = {

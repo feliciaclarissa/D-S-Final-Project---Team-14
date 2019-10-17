@@ -6,13 +6,13 @@ $db = DbConnection::getConnection();//getConnection belongs to singleton class.
 //PDO: Persistent Data object
 
 // Step 2: Create & run the query
-if(isset($_GET['guid'])){
+if(isset($_GET['id'])) {
   $stmt = $db->prepare('SELECT * FROM member where memberID = ?');
-$stmt->execute([$_GET['guid']]); //execute method of PDO object
+  $stmt->execute([$_GET['id']]); //execute method of PDO object
 }
 else {
-$stmt = $db->prepare('SELECT * FROM member');
-$stmt->execute(); //execute method of PDO object
+  $stmt = $db->prepare('SELECT * FROM member');
+  $stmt->execute(); //execute method of PDO object
 }
 $members = $stmt->fetchAll();
 
