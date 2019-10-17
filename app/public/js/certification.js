@@ -34,10 +34,22 @@ var certificationRecord = new Vue({
         certification_agency: '',
         exp_period: ''
       }
+    },
+    handleDelete(c) {
+      fetch('api/certification/delete.php', {
+       method:'POST',
+       body: JSON.stringify(c),
+       headers: {
+         "Content-Type": "application/json; charset=utf-8"
+       }
+      })
+      .then ( response => response.json() )
+      .then ( json => { certificationRecord.certifications = json });
+    },
+    handleRowClick(certificate) {
+    certificateEditsApp.editCertificate = certificate;
     }
-    // handleRowClick(patient) {
-    //   patientTriageApp.patient = patient;
-  } // end methods
+  }, // end methods
   created() {
     this.handleReset();
     this.fetchCertifications();

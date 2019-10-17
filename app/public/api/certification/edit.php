@@ -6,12 +6,15 @@ $db = DbConnection::getConnection();//getConnection belongs to singleton class.
 //PDO: Persistent Data object
 
 
-$stmt = $db->prepare('DELETE FROM member where memberID = ?');
+$stmt = $db->prepare('UPDATE certification set certification_agency = ?, exp_period = ? where certificationID = ?');
 $stmt->execute([
-$_POST['memberID']
+
+$_POST['certification_agency'],
+$_POST['exp_period'],
+$_POST['certificationID']
 ]); //execute method of PDO object
 
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../member/');
+header('Location: ../certification/');
