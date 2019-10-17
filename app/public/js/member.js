@@ -11,7 +11,6 @@ var memberRecordsApp = new Vue({
       .then(json => { memberRecordsApp.members = json })
     },
     handleSubmit(event) {
-      TODO:
       fetch('api/member/create.php', {
        method:'POST',
        body: JSON.stringify(this.recordMember),
@@ -44,12 +43,24 @@ var memberRecordsApp = new Vue({
         isActive: ''
       }
     },
-    // handleRowClick(patient) {
-    //   patientTriageApp.patient = patient;
-    // }
+    handleDelete(c) {
+      fetch('api/member/delete.php', {
+       method:'POST',
+       body: JSON.stringify(c),
+       headers: {
+         "Content-Type": "application/json; charset=utf-8"
+       }
+      })
+      .then ( response => response.json() )
+      .then ( json => { memberRecordsApp.members = json });
+    },
+    handleRowClick(member) {
+      memberEditsApp.editMember = member;
+    }
   }, // end methods
   created() {
     this.handleReset();
     this.fetchMembers();
+
   }
 });
