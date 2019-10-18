@@ -4,7 +4,11 @@ var receiveRecordsApp = new Vue({
     receive: [],
     members: [],
     certifications: [],
-    recordReceive: {}
+    recordReceive: {},
+    filter: {
+      firstName: '',
+      certification_name: ''
+    }
   },
   methods: {
     fetchreceive() {
@@ -43,7 +47,7 @@ var receiveRecordsApp = new Vue({
     handleDelete(r) {
       fetch('api/enrollment/delete.php', {
        method:'POST',
-       body: JSON.stringify(r),
+       body: JSON.stringify({enrollmentID: r.enrollmentID}),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
