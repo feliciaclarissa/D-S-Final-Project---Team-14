@@ -9,17 +9,17 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO certification (certificationID,certification_name,certification_agency,exp_period)
-  VALUES (?, ?, ?, ? )'
+  'INSERT INTO certification (certification_name,certification_agency,exp_period)
+  VALUES ( ?, ?, ? )'
 );
 
 $stmt->execute([
-  $guid,
+  // $guid,
   $_POST['certification_name'],
   $_POST['certification_agency'],
   $_POST['exp_period']
 ]);
-
+$id = $db->lastInsertId();
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../certification/?guid=' . $guid);
+header('Location: ../certification/?id='.$id);
