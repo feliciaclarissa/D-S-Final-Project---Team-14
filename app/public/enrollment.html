@@ -26,11 +26,11 @@
 
 <body>
  <div id="receiveRecordsApp">
-	<form>
+	<form @submit.prevent="handleSubmit">
 	    <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputMemberID">Member ID</label>
-				<select class="form-control" required>
+				<select class="form-control" v-model="recordReceive.memberID" required>
 								<option v-for="r in members" :value="r.memberID">{{r.firstName}}</option>
         </select>
 	    </div>
@@ -38,20 +38,28 @@
 		<div class="form-row">
 			<div class="form-group">
 				<label for="inputCertNumber">Certification ID</label>
-				<input type="integer" class="form-control" id="inputCertNumber">
+				<select class="form-control" v-model="recordReceive.certificationID" required>
+								<option v-for="r in certifications" :value="r.certificationID">{{r.certification_name}}</option>
+				</select>
 			</div>
 		</div>
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputIsActive">Enrollment Active?</label>
-		    <input type="text" class="form-control" id="inputIsActive">
+		    <input type="text" class="form-control" id="inputIsActive" v-model="recordReceive.certificateIsActive">
 	  	</div>
 		</div>
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputEnrolStart">Enrollment Start Date</label>
-		    <input type="date" class="form-control" id="inputEnrolStart">
+		    <input type="date" class="form-control" id="inputEnrolStart" v-model="recordReceive.certificateStartDate">
 	  	</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group">
+				<label for="inputEnrolEnd">Enrollment End Date</label>
+				<input type="date" class="form-control" id="inputEnrolEnd" v-model="recordReceive.certificateEndDate">
+			</div>
 		</div>
 	  <button type="submit" class="btn btn-primary">Create New Enrollment</button> <br> <br>
 	</form>
@@ -60,31 +68,47 @@
 	  <thead>
 	    <tr>
 	      <th scope="col"> Member ID </th>
-				<th scope="col"> Member First Name </th>
-				<th scope="col"> Member Last Name </th>
-				<th scope="col"> Certification Name </th>
+				<th scope="col"> Certification ID</th>
+				<th scope="col"> Active? </th>
 				<th scope="col"> Enrollment Start Date </th>
 				<th scope="col"> Enrollment End Date </th>
-	      <th scope="col"> Modify </th>
 				<th scope="col"> Delete </th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
-	      <td> 1 </td>
-	      <td> Tucker </td>
-	      <td> Stewart </td>
-				<td> Fire Fighter I </td>
-				<td> 07/20/2019</td>
-	      <td> 07/19/2021 </td>
-				<td> <a href="enrollment.html">Modify </a> </td>
-				<td> <a href="enrollment.html">Delete </a> </td>
+	    <tr v-for="r in receive" @click="handleRowClick(r)">
+	      <td> {{ r.memberID }} </td>
+	      <td> {{ r.certificationID }} </td>
+	      <td> {{ r.certificateIsActive }} </td>
+				<td> {{ r.certificateStartDate }}</td>
+				<td>{{ r.certificateEndDate }} </td>
+				<td> <form @submit.prevent="handleDelete(r)">
+						 <button type="submit" class="btn btn-primary">Delete</button> </form> </td>
 	    </tr>
 	  </tbody>
 	</table>
 </div>
+
+<div id="receiveEditsApp">
+<form @submit.prevent="handleEdit()">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<input type="date" class="form-control" placeholder="Start Date" v-model="editReceive.certificateStartDate" >
+							</div>
+							<div class="form-group col-md-6">
+								<input type="date" class="form-control" placeholder="End Date" v-model="editReceive.certificateEndDate" >
+							</div>
+						</div>
+					<div class="col-sm-10">
+						<button type="submit" class="btn btn-primary">Edit Enrollment</button>
+					</div>
+		</form>
+</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="js/receive.js"></script>
+	<script src="js/editreceive.js"></script>
+
 </body>
 
 <hr>

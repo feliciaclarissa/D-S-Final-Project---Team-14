@@ -3,6 +3,7 @@ var receiveRecordsApp = new Vue({
   data: {
     receive: [],
     members: [],
+    certifications: [],
     recordReceive: {}
   },
   methods: {
@@ -10,6 +11,11 @@ var receiveRecordsApp = new Vue({
       fetch('api/enrollment/index.php')
       .then(response => response.json())
       .then(json => { receiveRecordsApp.receive = json })
+    },
+    fetchCertifications() {
+      fetch('api/certification/index.php')
+      .then(response => response.json())
+      .then(json => { receiveRecordsApp.certifications = json })
     },
     fetchMembers() {
       fetch('api/member/fetch.php')
@@ -34,6 +40,17 @@ var receiveRecordsApp = new Vue({
       this.handleReset();
       // this.fetchreceive();
     },
+    handleDelete(r) {
+      fetch('api/enrollment/delete.php', {
+       method:'POST',
+       body: JSON.stringify(r),
+       headers: {
+         "Content-Type": "application/json; charset=utf-8"
+       }
+      })
+      .then ( response => response.json() )
+      .then ( json => { receiveRecordsApp.receive = json });
+    },
     handleReset() {
       this.recordReceive = {
         enrollmentID: '',
@@ -43,6 +60,9 @@ var receiveRecordsApp = new Vue({
         certificateStartDate: '',
         certificateEndDate: ''
       }
+    },
+    handleRowClick(receive) {
+      receiveEditsApp.editReceive = receive;
     }
     // handleRowClick(patient) {
     //   patientTriageApp.patient = patient;
@@ -52,5 +72,6 @@ var receiveRecordsApp = new Vue({
     this.handleReset();
     this.fetchreceive();
     this.fetchMembers();
+    this.fetchCertifications();
   }
 });

@@ -4,15 +4,8 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['id'])) {
-  $stmt = $db->prepare('SELECT firstName
-  FROM member'
-  );
-  $stmt->execute([$_GET['id']]);
-} else {
-  $stmt = $db->prepare('SELECT * FROM receive');
-  $stmt->execute();
-}
+$stmt = $db->prepare('SELECT * FROM receive');
+$stmt->execute();
 
 $receive = $stmt->fetchAll();
 
