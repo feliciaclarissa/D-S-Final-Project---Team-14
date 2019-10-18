@@ -50,6 +50,7 @@ var receiveRecordsApp = new Vue({
       })
       .then ( response => response.json() )
       .then ( json => { receiveRecordsApp.receive = json });
+      receiveEditsApp.handleReset();
     },
     handleReset() {
       this.recordReceive = {

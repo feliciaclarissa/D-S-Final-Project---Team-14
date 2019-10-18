@@ -53,6 +53,7 @@ var memberRecordsApp = new Vue({
       })
       .then ( response => response.json() )
       .then ( json => { memberRecordsApp.members = json });
+      memberEditsApp.handleReset();
     },
     handleRowClick(member) {
       memberEditsApp.editMember = member;

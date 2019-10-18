@@ -4,13 +4,11 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-if (isset($_GET['guid'])) {
-  $stmt = $db->prepare(
-    'SELECT * FROM certification
-    WHERE certificationID = ?'
-  );
-  $stmt->execute([$_GET['guid']]);
-} else {
+if (isset($_GET['id'])) {
+  $stmt = $db->prepare( 'SELECT * FROM certification WHERE certificationID = ?');
+  $stmt->execute([$_GET['id']]);
+}
+else {
   $stmt = $db->prepare('SELECT * FROM certification');
   $stmt->execute();
 }

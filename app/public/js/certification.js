@@ -45,6 +45,7 @@ var certificationRecord = new Vue({
       })
       .then ( response => response.json() )
       .then ( json => { certificationRecord.certifications = json });
+      certificateEditsApp.handleReset();
     },
     handleRowClick(certificate) {
     certificateEditsApp.editCertificate = certificate;

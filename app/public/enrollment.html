@@ -67,8 +67,8 @@
 	<table class="table table-hover table-striped table-sm">
 	  <thead>
 	    <tr>
-	      <th scope="col"> Member ID </th>
-				<th scope="col"> Certification ID</th>
+	      <th scope="col"> Member Name </th>
+				<th scope="col"> Certification Name</th>
 				<th scope="col"> Active? </th>
 				<th scope="col"> Enrollment Start Date </th>
 				<th scope="col"> Enrollment End Date </th>
@@ -77,8 +77,8 @@
 	  </thead>
 	  <tbody>
 	    <tr v-for="r in receive" @click="handleRowClick(r)">
-	      <td> {{ r.memberID }} </td>
-	      <td> {{ r.certificationID }} </td>
+	      <td> {{ r.firstName }} </td>
+	      <td> {{ r.certification_name }} </td>
 	      <td> {{ r.certificateIsActive }} </td>
 				<td> {{ r.certificateStartDate }}</td>
 				<td>{{ r.certificateEndDate }} </td>

@@ -4,9 +4,14 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT * FROM receive');
+if (isset($_GET['id'])) {
+  $stmt = $db->prepare( 'SELECT * FROM receive WHERE enrollmentID = ?');
+  $stmt->execute([$_GET['id']]);
+}
+else{
+$stmt = $db->prepare('SELECT m.firstName, c.certification_name, r.certificateIsActive, r.certificateStartDate, r.certificateEndDate FROM member m, certification c, receive r where m.memberID = r.memberID and c.certificationID = r.certificationID');
 $stmt->execute();
-
+}
 $receive = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
