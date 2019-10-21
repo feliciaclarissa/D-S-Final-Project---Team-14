@@ -38,7 +38,9 @@
 		<div class="form-row">
 			<div class="form-group">
 				<label for="inputCertNumber">Certification ID</label>
-				<input type="integer" class="form-control" id="inputCertNumber">
+				<select class="form-control" required>
+								<option v-for="s in certifications" :value="s.certificationID">{{s.certification_name}}</option>
+        </select>
 			</div>
 		</div>
 		<div class="form-row">
@@ -52,6 +54,13 @@
 		    <label for="inputEnrolStart">Enrollment Start Date</label>
 		    <input type="date" class="form-control" id="inputEnrolStart">
 	  	</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group">
+				<label for="inputEnrolStart">Enrollment End Date</label>
+				<input type="date" class="form-control" id="inputEnrolEnd">
+			</div>
 		</div>
 	  <button type="submit" class="btn btn-primary">Create New Enrollment</button> <br> <br>
 	</form>

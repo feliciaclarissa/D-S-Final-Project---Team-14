@@ -3,6 +3,7 @@ var receiveRecordsApp = new Vue({
   data: {
     receive: [],
     members: [],
+    certifications: [],
     recordReceive: {}
   },
   methods: {
@@ -15,6 +16,11 @@ var receiveRecordsApp = new Vue({
       fetch('api/member/fetch.php')
       .then(response => response.json())
       .then(json => { receiveRecordsApp.members = json })
+    },
+    fetchCertifications() {
+      fetch('api/certification/index.php')
+      .then(response => response.json())
+      .then(json => { certificationRecord.certifications = json })
     },
     handleSubmit(event) {
       TODO:
@@ -52,5 +58,6 @@ var receiveRecordsApp = new Vue({
     this.handleReset();
     this.fetchreceive();
     this.fetchMembers();
+    this.fetchCertifications();
   }
 });
