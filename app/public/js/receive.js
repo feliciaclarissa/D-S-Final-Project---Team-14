@@ -36,7 +36,9 @@ var receiveRecordsApp = new Vue({
        }
       })
       .then ( response => response.json() )
-      .then ( json => {receiveRecordsApp.receive.push(json[0])})
+      .then ( json => {
+        receiveRecordsApp.receive.push(json[0]);
+      })
       .catch(err => {
         console.error('RECORD POST ERROR:');
         console.error(err);

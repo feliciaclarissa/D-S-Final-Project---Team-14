@@ -9,7 +9,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO receive (memberID,certificationID, certificateIsActive,certificateStartDate,certificateEndDate)
+  'INSERT INTO receive (memberID, certificationID, certificateIsActive, certificateStartDate, certificateEndDate)
   VALUES (?, ?, ?, ?, ?)'
 );
 
