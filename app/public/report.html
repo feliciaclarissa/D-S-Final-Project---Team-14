@@ -25,71 +25,47 @@
 
 
 <body>
+<div id="receiveRecordsApp">
 
-	<form>
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="inputMemberID">Member</label>
-	      <input type="integer" class="form-control" id="inputMemberSearch">
-	    </div>
-	  </div>
-		<div class="form-row">
-	  	<div class="form-group">
-		    <label for="inputCertNumber">Certification</label>
-		    <input type="integer" class="form-control" id="inputCertSearch">
-	  	</div>
+	<div class="filter">
+	      <select v-model="filter.certificationID">
+				<option value="">(all)</option>
+	      <option v-for="r in certifications" :value="r.certificationID">{{ r.certification_name }}</option>
+	   	</select>
 		</div>
-
-	  <button type="submit" class="btn btn-primary"> Search </button> <br> <br>
-	</form>
-
+		<br>
 	<table class="table table-hover table-striped table-sm">
-	  <thead>
-	    <tr>
-	      <th scope="col"> Member ID </th>
-				<th scope="col"> Member First Name </th>
-				<th scope="col"> Member Last Name </th>
-				<th scope="col"> Certification Name </th>
-				<th scope="col"> Enrollment Start Date </th>
-				<th scope="col"> Enrollment End Date </th>
-	    </tr>
-	  </thead>
-
-	  <tbody>
-	    <tr>
-	      <td> 1 </td>
-	      <td> Tucker </td>
-	      <td> Stewart </td>
-				<td> Fire Fighter I </td>
-				<td> 07/20/2019</td>
-	      <td> 07/19/2021 </td>
-	    </tr>
-
-			<tr>
- 			 <td> 1 </td>
- 			 <td> Tucker </td>
- 			 <td> Stewart </td>
- 			 <td> Fire Fighter I </td>
- 			 <td> 07/20/2019</td>
- 			 <td> 07/19/2021 </td>
- 		 </tr>
-
-		 <tr>
-			 <td> 1 </td>
-			 <td> Tucker </td>
-			 <td> Stewart </td>
-			 <td> Fire Fighter I </td>
-			 <td> 07/20/2019</td>
-			 <td> 07/19/2021 </td>
-		 </tr>
-
-
-	  </tbody>
+			<thead>
+		    <tr>
+					<th scope="col"> Certificate Name </th>
+					<th scope="col"> Member First Name </th>
+					<th scope="col"> Member Last Name </th>
+					<th scope="col"> Radio Number </th>
+					<th scope="col"> Station Number </th>
+					<th scope="col"> Enrollment Start Date </th>
+					<th scope="col"> Enrollment End Date </th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr v-for="r in receive" v-if="(filter.certificationID=='' || filter.certificationID == r.certificationID)">
+		      <td> {{ r.certification_name }} </td>
+					<td> {{ r.firstName }} </td>
+		      <td> {{ r.lastName }} </td>
+		      <td> {{ r.radioNumber }} </td>
+					<td> {{ r.stationNumber }}</td>
+					<td>{{ r.certificateStartDate }} </td>
+					<td>{{ r.certificateEndDate }} </td>
+		    </tr>
+		  </tbody>
 	</table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/report.js"></script>
+
 </body>
 
 <br><br>
-<hr>
 
 <center>
 <footer>
