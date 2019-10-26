@@ -11,8 +11,8 @@ $db = DbConnection::getConnection();//getConnection belongs to singleton class.
 //PDO: Persistent Data object
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('INSERT INTO member ( firstName, lastName, dob, gender, radioNumber, stationNumber, email, position, phoneNumber, address, startDate, isActive)
-                      VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+$stmt = $db->prepare('INSERT INTO member ( firstName, lastName, dob, gender, radioNumber, stationNumber, email, position, phoneNumber, address, startDate)
+                      VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
                     );
 $stmt->execute([
   // $guid,
@@ -26,8 +26,7 @@ $stmt->execute([
   $_POST ['position'],
   $_POST ['phoneNumber'],
   $_POST ['address'],
-  $_POST ['startDate'],
-  $_POST ['isActive']
+  $_POST ['startDate']
 ]);
 $id = $db->lastInsertId();
 // TODO: Error checking?!

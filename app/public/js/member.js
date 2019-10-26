@@ -51,7 +51,7 @@ var memberRecordsApp = new Vue({
          "Content-Type": "application/json; charset=utf-8"
        }
       })
-      .then ( response => response.json() )
+      .then (response => response.json())
       .then ( json => { memberRecordsApp.members = json });
       memberEditsApp.handleReset();
     },

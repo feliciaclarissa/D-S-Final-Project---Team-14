@@ -63,7 +63,6 @@ var receiveRecordsApp = new Vue({
         enrollmentID: '',
         memberID: '',
         certificationID: '',
-        certificateIsActive: '',
         certificateStartDate: '',
         certificateEndDate: ''
       }

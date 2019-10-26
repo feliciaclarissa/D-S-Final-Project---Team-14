@@ -72,10 +72,13 @@
 <div id="certificateEditsApp">
 <form @submit.prevent="handleEdit()">
 						<div class="row">
-							<div class="form-group col-md-6">
-								<input type="text" class="form-control" placeholder="Certificate Agency" v-model="editCertificate.certification_agency" >
+							<div class="form-group col-md-4">
+								<input type="text" class="form-control" placeholder="Certification Name" v-model="editCertificate.certification_name" >
 							</div>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
+								<input type="text" class="form-control" placeholder="Certification Agency" v-model="editCertificate.certification_agency" >
+							</div>
+							<div class="form-group col-md-4">
 								<input type="text" class="form-control" placeholder="Exp Date" v-model="editCertificate.exp_period" >
 							</div>
 						</div>

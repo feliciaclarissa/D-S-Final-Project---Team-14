@@ -14,13 +14,13 @@ CREATE TABLE member (
     phoneNumber VARCHAR(64) NOT NULL,
     address VARCHAR(64) NOT NULL,
     startDate DATE NOT NULL,
-    isActive boolean NOT NULL
+    isActive boolean NOT NULL default 1
 );
 select * from member;
 drop table member;
 
 INSERT INTO member ( firstName, lastName, dob, gender, radioNumber, stationNumber, email, position,phoneNumber, address, startDate, isActive) VALUES
-( 'Sylvia', 'Hernandez', '2012-09-01',  'F', 'A-1', 1, 'sher@gmail.com', 'Chief', '312-344-4322','2093 S webster st Bloomington,Indiana', '2019-02-01', TRUE);
+( 'Sylvia', 'Hernandez', '2012-09-01',  'F', 'A-1', 1, 'sher@gmail.com', 'Chief', '312-344-4322','2093 S webster st Bloomington,Indiana', '2019-02-01');
 
 CREATE TABLE certification (
     certificationID INT PRIMARY KEY AUTO_INCREMENT,
@@ -38,11 +38,11 @@ CREATE TABLE receive (
     enrollmentID INT PRIMARY KEY AUTO_INCREMENT,
     memberID INT,
     certificationID INT,
-    certificateIsActive boolean NOT NULL,
+    certificateIsActive boolean NOT NULL default 1,
     certificateStartDate DATE DEFAULT NULL,
     certificateEndDate DATE DEFAULT NULL,
     constraint receive_fk FOREIGN KEY (memberID) references member (memberID),
     constraint receive1_fk FOREIGN KEY (certificationID) references certification (certificationID)
 );
 
-INSERT INTO receive ( memberID, certificationID, certificateIsActive, certificateStartDate, certificateEndDate) VALUES (1,1, TRUE, '2019-10-05', '2021-10-04');
+INSERT INTO receive ( memberID, certificationID, certificateStartDate, certificateEndDate) VALUES (1,1, '2019-10-05', '2021-10-04');

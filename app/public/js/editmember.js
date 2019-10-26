@@ -18,8 +18,10 @@ var memberEditsApp = new Vue({
     },
     handleReset() {
       this.editMember = {
-        firstName: '',
-        lastName: ''
+        radioNumber: '',
+        stationNumber: '',
+        position: '',
+        address: ''
       }
     }
   }, // end methods

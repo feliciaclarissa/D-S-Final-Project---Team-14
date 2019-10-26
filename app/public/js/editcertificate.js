@@ -18,6 +18,7 @@ var certificateEditsApp = new Vue({
     },
     handleReset() {
       this.editCertificate = {
+        certification_name: '',
         certification_agency: '',
         exp_period: ''
       }

@@ -6,9 +6,10 @@ $db = DbConnection::getConnection();//getConnection belongs to singleton class.
 //PDO: Persistent Data object
 
 
-$stmt = $db->prepare('UPDATE receive set certificateStartDate = ?, certificateEndDate = ? where enrollmentID = ?');
+$stmt = $db->prepare('UPDATE receive set certificateIsActive = ?, certificateStartDate = ?, certificateEndDate = ? where enrollmentID = ?');
 $stmt->execute([
 
+$_POST['certificateIsActive'],
 $_POST['certificateStartDate'],
 $_POST['certificateEndDate'],
 $_POST['enrollmentID']

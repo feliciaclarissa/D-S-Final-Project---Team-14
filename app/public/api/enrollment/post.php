@@ -9,15 +9,14 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'INSERT INTO receive (memberID, certificationID, certificateIsActive, certificateStartDate, certificateEndDate)
-  VALUES (?, ?, ?, ?, ?)'
+  'INSERT INTO receive (memberID, certificationID, certificateStartDate, certificateEndDate)
+  VALUES (?, ?, ?, ?)'
 );
 
 $stmt->execute([
   // $id,
   $_POST['memberID'],
   $_POST['certificationID'],
-  $_POST['certificateIsActive'],
   $_POST['certificateStartDate'],
   $_POST['certificateEndDate']
 ]);

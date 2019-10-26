@@ -6,11 +6,13 @@ $db = DbConnection::getConnection();//getConnection belongs to singleton class.
 //PDO: Persistent Data object
 
 
-$stmt = $db->prepare('UPDATE member set firstName = ?, lastName = ? where memberID = ?');
+$stmt = $db->prepare('UPDATE member set radioNumber = ?, stationNumber = ?, position = ?, address = ? where memberID = ?');
 $stmt->execute([
 
-$_POST['firstName'],
-$_POST['lastName'],
+$_POST['radioNumber'],
+$_POST['stationNumber'],
+$_POST['position'],
+$_POST['address'],
 $_POST['memberID']
 ]); //execute method of PDO object
 
