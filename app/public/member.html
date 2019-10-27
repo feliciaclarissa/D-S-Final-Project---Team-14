@@ -39,38 +39,38 @@
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputFirst">First Name</label>
-	      <input type="text" class="form-control" id="inputFirst" v-model="recordMember.firstName">
+	      <input type="text" class="form-control" id="inputFirst" v-model="recordMember.firstName" required>
 	    </div>
 	    <div class="form-group col-md-6">
 	      <label for="inputLast">Last Name</label>
-	      <input type="text" class="form-control" id="inputLast" v-model="recordMember.lastName">
+	      <input type="text" class="form-control" id="inputLast" v-model="recordMember.lastName" required>
 	    </div>
 	  </div>
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputDob">DOB</label>
-		    <input type="date" class="form-control" id="inputDob" placeholder="2019/10/10" v-model="recordMember.dob">
+		    <input type="date" class="form-control" id="inputDob" placeholder="2019/10/10" v-model="recordMember.dob" required>
 	  	</div>
 		  <div class="form-group">
 		    <label for="inputGender">Gender</label>
-		    <input type="text" class="form-control" id="inputGender" placeholder="M | F" v-model="recordMember.gender">
+		    <input type="text" class="form-control" id="inputGender" placeholder="M | F" v-model="recordMember.gender" required>
 		  </div>
 		</div>
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputRadio">Radio #</label>
-		    <input type="text" class="form-control" id="inputRadio" placeholder="A-2" v-model="recordMember.radioNumber">
+		    <input type="text" class="form-control" id="inputRadio" placeholder="A-2" v-model="recordMember.radioNumber" required>
 	  	</div>
 		  <div class="form-group">
 		    <label for="inputStation">Station #</label>
-		    <input type="text" class="form-control" id="inputStation" v-model="recordMember.stationNumber">
+		    <input type="text" class="form-control" id="inputStation" v-model="recordMember.stationNumber" required>
 		  </div>
 		</div>
 
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputEmail">Email</label>
-		    <input type="email" class="form-control" id="inputEmail" v-model="recordMember.email">
+		    <input type="email" class="form-control" id="inputEmail" v-model="recordMember.email" required>
 	  	</div>
 		  <div class="form-group">
 		    <label for="inputPhone">Phone</label>
@@ -84,13 +84,13 @@
 	  	</div>
 		  <div class="form-group">
 		    <label for="inputPosition">Position</label>
-		    <input type="text" class="form-control" id="inputPosition" placeholder="Fire Chief" v-model="recordMember.position">
+		    <input type="text" class="form-control" id="inputPosition" placeholder="Fire Chief" v-model="recordMember.position" required>
 		  </div>
 
 			<div class="form-row">
 				<div class="form-group">
 					<label for="inputStart">Start Date</label>
-					<input type="date" class="form-control" id="inputStart" placeholder="2019/10/10" v-model="recordMember.startDate">
+					<input type="date" class="form-control" id="inputStart" placeholder="2019/10/10" v-model="recordMember.startDate" required>
 				</div>
 			</div>
 

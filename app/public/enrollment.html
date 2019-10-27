@@ -34,7 +34,7 @@
 	<form @submit.prevent="handleSubmit">
 	    <div class="form-row">
 	    <div class="form-group col-md-6">
-	      <label for="inputMemberID">Member ID</label>
+	      <label for="inputMemberID">Member Name</label>
 				<select class="form-control" v-model="recordReceive.memberID" required>
 								<option v-for="r in members" :value="r.memberID">{{r.firstName}}</option>
         </select>
@@ -42,7 +42,7 @@
 	  </div>
 		<div class="form-row">
 			<div class="form-group">
-				<label for="inputCertNumber">Certification ID</label>
+				<label for="inputCertNumber">Certification Name</label>
 				<select class="form-control" v-model="recordReceive.certificationID" required>
 								<option v-for="r in certifications" :value="r.certificationID">{{r.certification_name}}</option>
 				</select>
@@ -51,29 +51,36 @@
 		<div class="form-row">
 	  	<div class="form-group">
 		    <label for="inputEnrolStart">Enrollment Start Date</label>
-		    <input type="date" class="form-control" id="inputEnrolStart" v-model="recordReceive.certificateStartDate">
+		    <input type="date" class="form-control" id="inputEnrolStart" v-model="recordReceive.certificateStartDate" required>
 	  	</div>
 		</div>
 		<div class="form-row">
 			<div class="form-group">
 				<label for="inputEnrolEnd">Enrollment End Date</label>
-				<input type="date" class="form-control" id="inputEnrolEnd" v-model="recordReceive.certificateEndDate">
+				<input type="date" class="form-control" id="inputEnrolEnd" v-model="recordReceive.certificateEndDate" required>
 			</div>
 		</div>
 	  <button type="submit" class="btn btn-primary">Create New Enrollment</button> <br> <br>
 	</form>
 
 <hr>
+
 <div class="filter">
-            <select v-model="filter.firstName">
-							<option value="">(all)</option>
-              <option v-for="r in members" :value="r.memberID">{{ r.firstName }}</option>
-            </select>
-						<!-- <select v-model="filter.certification_name">
-							<option value="">(all)</option>
-              <option v-for="r in certifications" :value="r.certificationID">{{ r.certification_name }}</option>
-            </select> -->
-					</div>
+<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<div class="input-group-prepend">
+				<label class="input-group-text" for="inputselect0">Member Name</label>
+			</div>
+			<div class="filter">
+				<select class="custom-select" id="select5" v-model="filter.firstName">
+					<option value="">(all)</option>
+					<option v-for="r in members" :value="r.memberID">{{ r.firstName }} {{ r.lastName }}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	</div>
+
 <br>
 	<table class="table table-hover table-striped table-sm" id="sortableTable">
 	  <thead>
