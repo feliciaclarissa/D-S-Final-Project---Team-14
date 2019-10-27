@@ -25,15 +25,23 @@
 
 
 <body>
+		<h3>  People with expired certifications </h3>
 <div id="receiveRecordsApp">
 
-	<div class="filter">
-	      <select v-model="filter.certificationID">
-				<option value="">(all)</option>
-	      <option v-for="r in certifications" :value="r.certificationID">{{ r.certification_name }}</option>
-	   	</select>
-		</div>
-		<br>
+		<div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputstyle">Certification</label>
+            </div>
+            <div class="filter">
+              <select class="custom-select" id="inputstyle" v-model="filter.certificationID">
+                <option value="">(all)</option>
+                <option v-for="r in certifications" :value="r.certificationID">{{r.certification_name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
 	<table class="table table-hover table-striped table-sm">
 			<thead>
 		    <tr>
@@ -57,19 +65,36 @@
 		  </tbody>
 	</table>
 <hr>
-	<h2>  Members by station and radio number </h2>
-	<div class="filter">
-	      <select v-model="filter.stationNumber">
-				<option value="">(all)</option>
-	      <option v-for="r in members" :value="r.stationNumber">{{ r.stationNumber }}</option>
-	   	</select>
-		</div>
-		<div class="filter">
-		      <select v-model="filter.radioNumber">
-					<option value="">(all)</option>
-		      <option v-for="r in members" :value="r.radioNumber">{{ r.radioNumber }}</option>
-		   	</select>
+	<h3>  Members by station and radio number </h3>
+
+	<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="inputstyle">Station Number</label>
+					</div>
+					<div class="filter">
+						<select class="custom-select" id="inputstyle" v-model="filter.stationNumber">
+							<option value="">(all)</option>
+							<option v-for="r in members" :value="r.stationNumber">{{r.stationNumber}}</option>
+						</select>
+					</div>
+				</div>
 			</div>
+
+	<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="inputstyle">Radio Number</label>
+					</div>
+					<div class="filter">
+						<select class="custom-select" id="inputstyle" v-model="filter.radioNumber">
+							<option value="">(all)</option>
+							<option v-for="r in members" :value="r.radioNumber">{{r.radioNumber}}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
 		<br>
 	<table class="table table-hover table-striped table-sm">
 			<thead>
@@ -89,10 +114,7 @@
 		    </tr>
 		  </tbody>
 	</table>
-
-
-
-</div>
+	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/report.js"></script>
