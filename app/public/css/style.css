@@ -1,5 +1,5 @@
 
-	    html, head, img, nav{
+	    html, head, img, nav, footer{
 			background-color: lightgrey;
 			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
 			color:black;
@@ -51,8 +51,12 @@
       min-height: 25px;
       }
 
-		footer{
+		thead{
+			background-color: #BB8C00;
+			color:white;
+		}
+		td{
+			padding: 10px;
 			border: 1px solid black;
-			padding: 20px;
-			font-weight: bold;
+
 		}
