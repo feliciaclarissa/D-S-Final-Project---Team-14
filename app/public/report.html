@@ -26,70 +26,77 @@
 
 <body>
 
-	<form>
-	  <div class="form-row">
-	    <div class="form-group col-md-6">
-	      <label for="inputMemberID">Member</label>
-	      <input type="integer" class="form-control" id="inputMemberSearch">
-	    </div>
-	  </div>
-		<div class="form-row">
-	  	<div class="form-group">
-		    <label for="inputCertNumber">Certification</label>
-		    <input type="integer" class="form-control" id="inputCertSearch">
-	  	</div>
-		</div>
-
 	  <button type="submit" class="btn btn-primary"> Search </button> <br> <br>
 	</form>
-
+<div id="memberRecordsApp">
 	<table class="table table-hover table-striped table-sm">
 	  <thead>
 	    <tr>
 	      <th scope="col"> Member ID </th>
 				<th scope="col"> Member First Name </th>
 				<th scope="col"> Member Last Name </th>
-				<th scope="col"> Certification Name </th>
-				<th scope="col"> Enrollment Start Date </th>
-				<th scope="col"> Enrollment End Date </th>
+				<th scope="col"> Radio # </th>
+				<th scope="col"> Email Address </th>
 	    </tr>
 	  </thead>
 
 	  <tbody>
-	    <tr>
-	      <td> 1 </td>
-	      <td> Tucker </td>
-	      <td> Stewart </td>
-				<td> Fire Fighter I </td>
-				<td> 07/20/2019</td>
-	      <td> 07/19/2021 </td>
+	    <tr v-for="m in members">
+	      <td> {{m.memberID}} </td>
+	      <td> {{m.firstName}} </td>
+	      <td> {{m.lastName}} </td>
+				<td> {{m.radioNumber}} </td>
+				<td> {{m.email}} </td>
+
 	    </tr>
 
-			<tr>
- 			 <td> 1 </td>
- 			 <td> Tucker </td>
- 			 <td> Stewart </td>
- 			 <td> Fire Fighter I </td>
- 			 <td> 07/20/2019</td>
- 			 <td> 07/19/2021 </td>
- 		 </tr>
-
-		 <tr>
-			 <td> 1 </td>
-			 <td> Tucker </td>
-			 <td> Stewart </td>
-			 <td> Fire Fighter I </td>
-			 <td> 07/20/2019</td>
-			 <td> 07/19/2021 </td>
-		 </tr>
 
 
 	  </tbody>
 	</table>
+</div>
+
+<br><br>
+<hr>
+<div id="reportsApp">
+<table class="table table-hover table-striped table-sm">
+	<thead>
+		<tr >
+			<th scope="col"> Member ID </th>
+			<th scope="col"> Member First Name </th>
+			<th scope="col"> Member Last Name </th>
+			<th scope="col"> Certification Name </th>
+			<th scope="col"> Enrollment Start Date </th>
+
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr  v-for="m in members">
+			<td> {{m.memberID}} </td>
+			<td> {{m.firstName}} </td>
+			<td> {{m.lastName}} </td>
+			<td> {{m.certification_name}} </td>
+			<td> {{m.certificateEndDate}}</td>
+
+		</tr>
+
+
+
+
+	</tbody>
+</table>
+</div>
+
 </body>
 
 <br><br>
 <hr>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/member.js"></script>
+<script src="js/report.js"></script>
+
 
 <center>
 <footer>
