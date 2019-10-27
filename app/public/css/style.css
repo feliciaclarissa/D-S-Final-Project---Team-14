@@ -1,5 +1,5 @@
 
-	    html, head, img, nav{
+	    html, head, img, nav, footer{
 			background-color: lightgrey;
 			font-family: 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', 'Helvetica, Arial', 'sans-serif';
 			color:black;
@@ -30,4 +30,14 @@
 		.btn:hover {
 			background-color: black;
 			color:white;
+		}
+
+		thead{
+			background-color: #FF8C00;
+			color:white;
+		}
+
+		td{
+      padding: 10px;
+      border: 1px solid black;
 		}
