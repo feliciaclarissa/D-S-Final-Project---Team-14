@@ -17,3 +17,9 @@ Features:
 4- HTML pages are designed using bootstrap and external css
 5- Application is deployed to the cloud
 6- A member cannot be deleted if she/he is assigned with a certification. Similarly, in the case of certification, it cannot be deleted if a member is enrolled in it.
+7- To avoid human error, we have provided dropdowns in the form to make it more intuitive as well.
+
+Instructions:
+1- For active status, we would use 1 or 0 as an input to define the validity.
+2- The editable fields are build based on the relevance of the business situation. For example, a member could change address, radio number, station number and even position and hence these fields are provided in the form to edit member records.
+3- To edit member/certification, please click on the record. It will automatically populate the existing details in the edit form.
