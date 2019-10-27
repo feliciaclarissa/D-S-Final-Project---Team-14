@@ -7,10 +7,15 @@
 		}
 
 	    h1,p,h3,ul{
-			background-color: #FF8C00;
+			background-color: #BB8C00;
 			color:white;
-
 		}
+
+		h5 {
+			background-color: #44AA00;
+			color: white;
+		}
+
 		.btn{
 			transform: translate (-50%, -50%);
 			-ms-transform: translate (-50%,-50%);
@@ -30,4 +35,24 @@
 		.btn:hover {
 			background-color: black;
 			color:white;
+		}
+
+		#logo {
+			height: 100px;
+			width: 100px;
+		}
+
+		header{
+      border: 1px solid black;
+      padding: 20px;
+      font-size: large;
+      font-weight: bold;
+      margin-bottom: 10px;
+      min-height: 25px;
+      }
+
+		footer{
+			border: 1px solid black;
+			padding: 20px;
+			font-weight: bold;
 		}
