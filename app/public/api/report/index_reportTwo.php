@@ -4,7 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare( 'SELECT m.firstName, m.lastName, m.radioNumber, m.stationNumber, r.certificationID, c.certification_name, r.certificateStartDate, r.certificateEndDate FROM member m, certification c, receive r where m.memberID = r.memberID and c.certificationID = r.certificationID and r.certificateIsActive = 0');
+$stmt = $db->prepare( 'SELECT * FROM member');
 $stmt->execute();
 
 $receive = $stmt->fetchAll();
