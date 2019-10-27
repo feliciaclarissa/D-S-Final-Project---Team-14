@@ -2,10 +2,13 @@ var receiveRecordsApp = new Vue({
   el: '#receiveRecordsApp',
   data: {
     receive: [],
+    receive_reportTwo: [],
     members: [],
     certifications: [],
     filter: {
-      certificationID: ''
+      certificationID: '',
+      radioNumber: '',
+      stationNumber: ''
     }
   },
   methods: {
@@ -18,6 +21,11 @@ var receiveRecordsApp = new Vue({
       fetch('api/certification/index.php')
       .then(response => response.json())
       .then(json => { receiveRecordsApp.certifications = json })
+    },
+    fetchreceiveTwo() {
+      fetch('api/report/index_reportTwo.php')
+      .then(response => response.json())
+      .then(json => { receiveRecordsApp.receive_reportTwo = json })
     },
     fetchMembers() {
       fetch('api/member/fetch.php')
@@ -78,5 +86,6 @@ var receiveRecordsApp = new Vue({
     this.fetchreceive();
     this.fetchMembers();
     this.fetchCertifications();
+    this.fetchreceiveTwo();
   }
 });
